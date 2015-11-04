@@ -3,15 +3,13 @@
 #copies theme files from atom package folder
 ATOM_PACKAGES_DIR="/Users/Restuta/.atom/packages/seti-ui"
 
-SAMPLE_FILES_DIR="./sample-files"
-STYLES_DIR="./styles"
-INDEX_LESS_FILE="./index.less"
+DESTINATION="$ATOM_PACKAGES_DIR"
 
-DESTINATION="$ATOM_PACKAGES_DIR/"
+cp -rv "./styles" $DESTINATION
+cp -rv "./index.less" $DESTINATION
+cp -rv "./file-types" $DESTINATION
 
-cp -rv $SAMPLE_FILES_DIR $DESTINATION
-cp -rv $STYLES_DIR $DESTINATION
-cp -rv $INDEX_LESS_FILE $DESTINATION
 
 echo "Done"
+
  
