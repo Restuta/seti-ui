@@ -15,7 +15,6 @@
 tabs-bar, .tab-bar {
   height: @tab-height + @tab-top-padding + @tab-bottom-border-height;
   background: @tab-bar-background-color;
-  padding: 0 10px 0 10px;
   box-sizing: border-box;
   border-bottom: solid 4px @tab-bar-bottom-border-color;
   // left: 16px;
@@ -36,8 +35,8 @@ tabs-bar, .tab-bar {
     height: @tab-height;
     line-height: @tab-height;
     color: @text-color;
-    padding-left: 0;
-    margin-left: 15px;
+
+    padding-left: 15px;
     border-radius: 0;
     box-shadow: none;
     -webkit-transform: none;
@@ -46,34 +45,14 @@ tabs-bar, .tab-bar {
     border-radius: 0;
     border: none;
     border-bottom: solid 4px @tab-bar-bottom-border-color;
-
-    &, &:before {
-      background: @tab-background;
-    }
-
-    &:before {
-      background: @tab-background;
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -16px;
-      height: @tab-height;
-      width: 16px;
-      border-radius: 0;
-      border-top-right-radius: 0;
-      -webkit-transform: none;
-      border: none;
-      border-bottom: solid 4px @tab-bar-bottom-border-color;
-      border-left: solid 1px @tab-bar-bottom-border-color;
-      box-shadow: none;
-    }
-
+    border-right: solid 1px @tab-bar-bottom-border-color;
+    background: @tab-background;
 
     .close-icon {
       z-index: 3;
       line-height: @tab-height;
       -webkit-transform: none;
-      color: @text-color;
+      color: fadeout(@text-color, 75%);
       margin-top: -3px;
 
       &:hover {
@@ -93,11 +72,11 @@ tabs-bar, .tab-bar {
 
     .title{
       -webkit-transform: none;
-      margin-top: -2px;
+      margin-top: 3px;
     }
 
-    &:first-child {
-      margin-left: 0px;
+    &:last-child:not(.active) {
+      margin-right: -1px;
     }
   }
 
@@ -108,16 +87,19 @@ tabs-bar, .tab-bar {
     box-shadow: none;
     border: none;
     border-bottom: solid 4px @tab-highlight-color;
+    background: @tab-background-active;
+    height: @tab-height + 0px;
 
     .title{
       position: relative;
-      top: 0px;
-      margin-top: -1px;
+      //top: 5px;
+      margin-top: 3px;
     }
 
     .close-icon {
       line-height: @tab-height - 1px;
       color: @text-color;
+      margin-right: 1px;
     }
 
     &, &:before {

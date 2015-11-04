@@ -6,7 +6,7 @@
   tabs-bar tabs-tab .title[data-name$="@{extension}"], .tab-bar .tab .title[data-name$="@{extension}"] {
     position: relative;
     display: inline-block;
-    top: @offset + 6px;
+    top: @offset;
     padding: 0;
 
     &:before {
@@ -14,12 +14,15 @@
       content: "@{icon-@{type}}";
       font-size: @font;
       position: relative;
-      top: @top - 6px;
+      top: @top - 6px !important;
       left: @left + 5px;
-      margin-right: @right + 15px;
+      padding-right: @right;
+      margin-right: @right;
       color: ~"@{color-@{type}}";
     }
   }
+
+
 
   tabs-bar tabs-tab.active .title[data-name$="@{extension}"], tab-bar .tab.active .title[data-name$="@{extension}"] {
     top: @offset;
